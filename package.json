@@ -1,0 +1,19 @@
+{
+  "name": "electron-demo",
+  "version": "1.0.0",
+  "description": "Electron Demo",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/greglownes/electron",
+  "keywords": [
+    "Electron",
+    "demo"
+  ],
+  "author": "greglownes",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "~1.7.8"
+  }
+}
