@@ -1,0 +1,16 @@
+<template class="section-template">
+  <section id="versions">
+    <h1>Electron Demo</h1>
+    We are using Node.js
+    <span id="node_version"></span>,<br>
+    Chromium
+    <span id="chrome_version"></span>,<br>
+    and Electron
+    <span id="electron_version"></span>.<br>
+    <script>
+      document.getElementById('node_version').innerHTML = process.versions.node;
+      document.getElementById('chrome_version').innerHTML = process.versions.chrome;
+      document.getElementById('electron_version').innerHTML = process.versions.electron;
+    </script>
+  </section>
+</template>

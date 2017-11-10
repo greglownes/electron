@@ -1,0 +1,15 @@
+<template class="section-template">
+  <section id="menu">
+    <h1>Menu</h1>
+    The Demo menu at the top left simply replicates the left nav links.<br>
+    <br>
+    Custom menus are easy to create using menu templates.<br>
+    However, unlike most electron functionality, there are platform differences<br>
+    that need to be considered between Mac, Win and Linux.<br>
+    <br>
+    Another tricky part is communications between the menu in the main process<br>
+    down to the pages in the renderer process.<br>
+    The Demo menu item uses webContents() to send events to the index.html renderer,<br>
+    which in turn activates the appropriate page/content.
+  </section>
+</template>
