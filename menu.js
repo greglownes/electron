@@ -59,5 +59,13 @@ function(n) {
       $(this).tab('show')
     })
     $('#myTab a:first').tab('show') // Select first tab
+    const submitFormButton = document.querySelector("#ipcForm2");
+    submitFormButton.addEventListener("submit", function(event){
+      event.preventDefault();   // stop the form from submitting
+      let firstname = document.getElementById("firstname").value;
+      let lastname = document.getElementById("lastname").value;
+      const ipcRenderer = require('electron').ipcRenderer;
+      ipcRenderer.send('form-submission', firstname, lastname)
+    });
   })
 }(jQuery);

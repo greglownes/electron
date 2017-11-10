@@ -33,6 +33,12 @@ const template = [
         click (menuItem, browserWindow, event) {
           browserWindow.webContents.send('menucall', 'menu');
          }
+      },
+      {
+        label: 'Form and Communications',
+        click (menuItem, browserWindow, event) {
+          browserWindow.webContents.send('menucall', 'form');
+         }
       }
     ]
   },

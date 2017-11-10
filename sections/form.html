@@ -1,0 +1,19 @@
+<template class="section-template">
+  <section id="form">
+    <h1>Form and Communications</h1>
+    This form is built with plain HTML and CSS.<br>
+    The form submit event is captured in the renderer process's javascript where it can be
+    used directly or passed back to the main process using ipcRenderer.send().<br>
+    In the case of this demo it is passed back to the main process, which simply echo's it
+    to the terminal window as proof that it worked.<br>
+    <form action="#" id="ipcForm2">
+        First name:<br>
+        <input type="text" name="firstname" id="firstname" value="John">
+        <br>
+        Last name:<br>
+        <input type="text" name="lastname" id="lastname" value="Smith">
+        <br><br>
+        <input id="submit" type="submit" value="Submit">
+    </form>
+  </section>
+</template>
