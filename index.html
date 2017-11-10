@@ -4,80 +4,35 @@
     <meta charset="UTF-8">
     <title>Electron Demo</title>
     <link rel = "stylesheet" href = "./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="import" href="sections/versions.html">
+    <link rel="import" href="sections/jqcounter.html">
+    <link rel="import" href="sections/bstable.html">
+    <link rel="import" href="sections/bstabnav.html">
+    <link rel="import" href="sections/menu.html">
   </head>
   <body>
-    <div class = "container">
-      <h1>Electron Demo</h1>
-      <!-- All of the Node.js APIs are available in this renderer process. -->
-      We are using Node.js <script>document.write(process.versions.node)</script>,<br>
-      Chromium <script>document.write(process.versions.chrome)</script>,<br>
-      and Electron <script>document.write(process.versions.electron)</script>.<br>
-      <h1>Click Counter with jQuery</h1>
-      If the counter counts up every click, then jQuery is working.<br>
-      <h3 id = "click-counter"></h3>
-      <button class = "btn btn-success" id = "countbtn">Click here</button>
-      <h1>Bootstrap - Tables - Hover Rows</h1>
-      If you hover over a line in the table below with the mouse, it should get hightlighting.  This proves that Bootstrap is working.<br>
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Username</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
-        </li>
-      </ul>
-      <div class="tab-content" id="myTabContent">
-        <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
-          Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+    <section class="main">
+      <row>
+        <div class="col-sm-3">
+          <ul class="nav nav-pills nav-stacked">
+            <li><a id="versions-menu" data-section="versions" href="#">Versions</a></li>
+            <li><a id="jqcounter-menu" data-section="jqcounter" href="#">jQuery Counter</a></li>
+            <li><a id="bstable-menu" data-section="bstable" href="#">Bootstrap Table with Hover Rows</a></li>
+            <li><a id="bstabnav-menu" data-section="bstabnav" href="#">Bootstrap Tab Nav</a></li>
+            <li><a id="menu-menu" data-section="menu" href="#">Custom Menus</a></li>
+          </ul>
         </div>
-        <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-          Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+        <div class="col-sm-9">
+          <div id="wrapper">
+          </div>
         </div>
-        <div class="tab-pane" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-          Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.
-        </div>
-      </div>
-
-      <script>
-        // You can also require other files to run in this process
-        window.$ = window.jQuery = require('./node_modules/jquery/dist/jquery.min.js');
-        require('./node_modules/bootstrap/dist/js/bootstrap.min.js')
-        require('./renderer.js')
-      </script>
-    </div>
+      </row>
+    </section>
+    <script>
+      // You can also require other files to run in this process
+      window.$ = window.jQuery = require('./node_modules/jquery/dist/jquery.min.js');
+      require('./node_modules/bootstrap/dist/js/bootstrap.min.js')
+      require('./renderer.js')
+    </script>
   </body>
 </html>
