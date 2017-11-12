@@ -39,6 +39,12 @@ const template = [
         click (menuItem, browserWindow, event) {
           browserWindow.webContents.send('menucall', 'form');
          }
+      },
+      {
+        label: 'Webview',
+        click (menuItem, browserWindow, event) {
+          browserWindow.webContents.send('menucall', 'webview');
+         }
       }
     ]
   },
