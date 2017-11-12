@@ -45,6 +45,12 @@ const template = [
         click (menuItem, browserWindow, event) {
           browserWindow.webContents.send('menucall', 'webview');
          }
+      },
+      {
+        label: 'MySQL',
+        click (menuItem, browserWindow, event) {
+          browserWindow.webContents.send('menucall', 'mysql');
+         }
       }
     ]
   },
