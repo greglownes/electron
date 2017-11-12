@@ -1,0 +1,31 @@
+<template class="section-template">
+  <section id="webview">
+    <h1>Webview</h1>
+    If you see content below, then it was loaded from a remote server.<br>
+    <div class = "indicator"></div>
+    <webview
+      id = "foo"
+      src = "https://www.tutorialspoint.com/"
+      style = "height:480px;"
+      >
+      <!--leaving width out fills the page:style = "width:400px;"-->
+    </webview>
+    <script type = "text/javascript">
+      const webview = document.querySelector('webview')
+      const indicator = document.querySelector('.indicator')
+      const loadstart = () => {
+        indicator.innerText = 'loading...'
+      }
+      const loadstop = () => {
+        indicator.innerText = ''
+      }
+      webview.addEventListener('did-start-loading', loadstart)
+      webview.addEventListener('did-stop-loading', loadstop)
+
+      //debugging
+      //webview.addEventListener('dom-ready', () => {
+        //webview.openDevTools()
+      //})
+    </script>
+  </section>
+</template>
