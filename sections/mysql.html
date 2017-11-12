@@ -1,0 +1,68 @@
+<template class="section-template">
+  <section id="mysql">
+    <h1>MySQL</h1>
+    For this to work, you need a localhost MySQL database named "electron".<br>
+    A user named "electron" with password "Pass1word!" with read access to the database.<br>
+    A table named test with id, firstname and lastname fields.  And some test data.<br>
+    Click the button and the data should be displayed.<br>
+    <br>
+    <input type="button" id="action-btn" value="Retrieve data" />
+    <table id="table" border="1">
+       <tbody>
+       </tbody>
+    </table>
+    <script type = "text/javascript">
+      var mysql = require('mysql');
+      function el(selector) {
+          return document.getElementById(selector);
+      }
+      el('action-btn').addEventListener('click', function(){
+          getData(function(rows){
+              var html = '';
+              rows.forEach(function(row){
+                  html += '<tr>';
+                  html += '<td>';
+                  html += row.id;
+                  html += '</td>';
+                  html += '<td>';
+                  html += row.firstname;
+                  html += '</td>';
+                  html += '<td>';
+                  html += row.lastname;
+                  html += '</td>';
+                  html += '</tr>';
+                  console.log(row);
+              });
+              document.querySelector('#table > tbody').innerHTML = html;
+          });
+      },false);
+      function getData(callback){
+          var mysql = require('mysql');
+          var connection = mysql.createConnection({
+              host     : 'localhost',
+              user     : 'electron',
+              password : 'Pass1word!',
+              database : 'electron'
+          });
+          connection.connect(function(err) {
+              if(err){
+                  console.log(err.code);
+                  console.log(err.fatal);
+              }
+          });
+          $query = 'SELECT `id`,`firstname`,`lastname` FROM `test` LIMIT 10';
+          connection.query($query, function(err, rows, fields) {
+              if(err){
+                  console.log("An error ocurred performing the query.");
+                  console.log(err);
+                  return;
+              }
+              callback(rows);
+              console.log("Query succesfully executed");
+          });
+          connection.end(function(){
+          });
+      }
+    </script>
+  </section>
+</template>
